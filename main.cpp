@@ -1,22 +1,23 @@
+#include "Solo/Planta/especies/Cacto.h"
+#include "Solo/Solo.h"
 #include <iostream>
-#include "Posicao/Posicao.h"
-#include "jardim/Jardim.h"
-
-using namespace std;
 
 int main() {
+    // Criar um solo com valores acima e abaixo dos limites para testar as regras do Cacto
+    Solo solo(110, 4); // Exemplo: 110 água (excesso), 4 nutrientes
 
-    Jardim j;
-    int linhas, colunas;
+    Cacto c;
 
-    std::cout << "Tamanho do jardim (linhas colunas): ";
-    std::cin >> linhas >> colunas;
-
-    if (!j.inicializa(linhas, colunas)) {
-        std::cout << "Erro: dimensoes invalidas.\n";
-        return 1;
+    // Simular vários instantes e mostrar o estado do Cacto
+    for (int i = 0; i < 5; ++i) {
+        std::cout << "Instante " << i << ": " << c.descricao() << "\n";
+        c.atua(solo);
     }
 
-    j.print(); // mostra o jardim
+    if (!c.estaViva())
+        std::cout << "O cacto morreu!\n";
+    else
+        std::cout << "O cacto sobreviveu aos 5 instantes.\n";
 
+    return 0;
 }
