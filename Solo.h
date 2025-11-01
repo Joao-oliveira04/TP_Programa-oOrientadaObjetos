@@ -1,13 +1,14 @@
 #ifndef POO_TP_SOLO_H
 #define POO_TP_SOLO_H
 #include <string>
+#include "Settings.h"
 
 class Solo {
     int agua;
     int nutrientes;
 
 public:
-    Solo(int a = 0, int n = 0);
+    Solo();
 
     int getAgua() const {return agua;}
     int getNutrientes() const {return nutrientes;}

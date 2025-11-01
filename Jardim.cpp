@@ -38,8 +38,8 @@ Celula &Jardim::aceder(int l, int c) {
     return celulas[index(l, c)];
 }
 
-const Celula &Jardim::aceder(int l, int c) const {
-    return celulas[index(l,c)];
+const Celula &Jardim::aceder(int l, int c) const{
+    return celulas[index(l, c)];
 }
 
 void Jardim::print() const {
@@ -57,8 +57,16 @@ void Jardim::print() const {
     for(int l = 0; l < lins; l++){
         cout << char('A' + l) << " ";
         for(int c = 0 ; c < cols; c++){
-            cout << celulas[index(l,c)].simbolo() << " ";
+            if(jardineiro.estaNoJardim() && jardineiro.getPos().getLinhas() == l && jardineiro.getPos().getColunas() == c){
+                cout << "*" << " ";
+            }else{
+                cout << celulas[index(l,c)].simbolo() << " ";
+            }
         }
         cout << "\n";
     }
+}
+
+bool Jardim::PosicaoValida(int l, int c) const {
+    return l >= 0 && l < lins && c >= 0 && c < cols;
 }

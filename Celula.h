@@ -1,6 +1,6 @@
 #ifndef POO_TP_CELULA_H
 #define POO_TP_CELULA_H
-#include "../Solo/Solo.h"
+#include "Solo.h"
 
 class Planta;
 class Ferramenta;

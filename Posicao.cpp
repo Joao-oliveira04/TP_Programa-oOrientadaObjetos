@@ -17,8 +17,8 @@ bool Posicao::converteLetras(const string &pos, Posicao &out) {
     if(pos.size() != 2)  //tem de ter exatamente 2 letras
         return false;
 
-    char a = tolower(pos[0]); // converte 1ª letra para minúscula
-    char b = tolower(pos[1]); // converte 2ª letra para minúscula
+    char a = pos[0];
+    char b = pos[1];
 
     // valida se ambas são letras entre 'a' e 'z'
     if (a < 'a' || a > 'z' || b < 'a' || b > 'z')
@@ -40,3 +40,4 @@ string Posicao::converteCoordenadas() const {
     s = s + char('a' + colunas);
     return s;
 }
+
