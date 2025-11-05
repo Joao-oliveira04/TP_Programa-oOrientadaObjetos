@@ -28,8 +28,7 @@ public:
     static const int CMD_LFERR   = 20;
 };
 
-    struct Comando {
-
+struct Comando {
     int tipo;
     std::string tokens[8];
     int numTokens;
